@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- Inherit the form view from the base module -->
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Remove extra fields from the inherited view -->
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobile']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='website']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//notebook" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Define the sub-menu action in order to show the menu and show the tree,kanban and form views of all contacts -->
     <record id="action_contact" model="ir.actions.act_window">
         <field name="name">Contacts</field>
         <field name="type">ir.actions.act_window</field>
@@ -13,5 +50,6 @@
         </field>
     </record>
 
+    <!-- Create sub-menu for the root menu for Contacts -->
     <menuitem id="menu_contact" name="Contacts" sequence="0" parent="menu_voyage_root" action="action_contact"/>
 </odoo>
