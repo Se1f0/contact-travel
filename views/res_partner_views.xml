@@ -7,6 +7,12 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <!-- Define smart button that show the total number of voyages and redirect to related view -->
+            <div class="oe_button_box" name="button_box">
+                <button class="oe_stat_button" type="object" name="action_view_voyages" icon="fa-plane">
+                    <field name="contact_nb_voyage" string="Voyages" widget="statinfo"/>
+                </button>
+            </div>
 
             <!-- Remove extra fields from the inherited view -->
             <xpath expr="//field[@name='company_type']" position="attributes">
