@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access.contact.travel.voyage,access_contact_travel_voyage,contact_travel.model_contact_travel_voyage,base.group_user,1,1,1,1
+access.contact.travel.res.partner,access_contact_travel_res_partner,contact_travel.model_res_partner,base.group_user,1,1,1,1
