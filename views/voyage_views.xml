@@ -32,6 +32,19 @@
         </field>
     </record>
 
+    <!-- Define the search view to search for records by name,destination or contact -->
+    <record id="view_contact_travel_voyage_search" model="ir.ui.view">
+        <field name="name">contact_travel.voyage.search</field>
+        <field name="model">contact_travel.voyage</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom"/>
+                <field name="destination"/>
+                <field name="contact_id"/>
+            </search>
+        </field>
+    </record>
+
     <!-- Define the sub-menu action in order to show the menu and show the tree and form views of all voyages -->
     <record id="action_voyage" model="ir.actions.act_window">
         <field name="name">Voyages</field>
