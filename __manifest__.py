@@ -6,7 +6,9 @@
     'category': 'Uncategorized',
     'version': '0.1',
     'depends': ['base'],
-    'data': [],
+    'data': [
+        'security\ir.model.access.csv',
+    ],
     'installable': True,
     'application': True,
     'sequence': -100,
