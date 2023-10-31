@@ -12,6 +12,9 @@ class ResPartner(models.Model):
         ],
         string='Niveau de récompense',
         default='argent',
+        compute='_compute_niv_recomp',
+        readonly=False,
+        store=True,
     )
     # This field will calculate the total number of voyages for the contact to use in the smart button
     contact_nb_voyage = fields.Integer(string='Nombre de voyages', compute='_compute_contact_nb_voyage')
@@ -33,6 +36,18 @@ class ResPartner(models.Model):
             total_depense = sum(contact.contact_voyage_ids.mapped('prix'))
             contact.total_voyage_depense = total_depense
 
+    # This function will trigger whenever the total_voyage_depense changes and will update automatically the reward level
+    @api.depends('total_voyage_depense')
+    def _compute_niv_recomp(self):
+        for contact in self:
+            if contact.total_voyage_depense >= 75000:
+                contact.niv_recomp = 'platine'
+            elif contact.total_voyage_depense >= 50000:
+                contact.niv_recomp = 'or'
+            elif contact.total_voyage_depense >= 25000:
+                contact.niv_recomp = 'argent'
+            else:
+                contact.niv_recomp = 'argent'
 
     # This function will return the view of voyages related to the contact when clicking on the smart button
     def action_view_voyages(self):
