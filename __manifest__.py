@@ -8,6 +8,8 @@
     'depends': ['base'],
     'data': [
         'security\ir.model.access.csv',
+        'views\menu.xml',
+        'views\\voyage_views.xml',
     ],
     'installable': True,
     'application': True,
