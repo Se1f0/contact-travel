@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Create Voyages Tress View and list all Records -->
+    <record id="view_contact_travel_voyage_tree" model="ir.ui.view">
+        <field name="name">contact_travel.voyage.tree</field>
+        <field name="model">contact_travel.voyage</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="date_de_depart"/>
+                <field name="destination"/>
+                <field name="contact_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Create Voyages Form View -->
+    <record id="view_contact_travel_voyage_form" model="ir.ui.view">
+        <field name="name">contact_travel.voyage.form</field>
+        <field name="model">contact_travel.voyage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="date_de_depart"/>
+                        <field name="destination"/>
+                        <field name="contact_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
     <!-- Define the sub-menu action in order to show the menu and show the tree and form views of all voyages -->
     <record id="action_voyage" model="ir.actions.act_window">
