@@ -9,3 +9,4 @@ class Voyage(models.Model):
     destination = fields.Char(string='Destination' ,required=True)
     # This field will link the voyage and contact models together using the Many2One relationship
     contact_id = fields.Many2one('res.partner', string='Contact' ,required=True)
+    prix = fields.Float(string='Prix (DA)' ,required=True)

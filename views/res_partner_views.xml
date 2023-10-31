@@ -18,6 +18,10 @@
             <xpath expr="//field[@name='category_id']" position="after">
                 <field name="niv_recomp"/>
             </xpath>
+            <!-- Show the total expenses on the inherited form before the category field -->
+            <xpath expr="//field[@name='category_id']" position="before">
+                <field name="total_voyage_depense"/>
+            </xpath>
 
             <!-- Remove extra fields from the inherited view -->
             <xpath expr="//field[@name='company_type']" position="attributes">

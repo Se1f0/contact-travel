@@ -9,6 +9,7 @@
                 <field name="nom"/>
                 <field name="date_de_depart"/>
                 <field name="destination"/>
+                <field name="prix"/>
                 <field name="contact_id"/>
             </tree>
         </field>
@@ -25,6 +26,7 @@
                         <field name="nom"/>
                         <field name="date_de_depart"/>
                         <field name="destination"/>
+                        <field name="prix"/>
                         <field name="contact_id"/>
                     </group>
                 </sheet>
