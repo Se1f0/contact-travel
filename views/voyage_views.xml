@@ -43,6 +43,13 @@
                 <field name="nom"/>
                 <field name="destination"/>
                 <field name="contact_id"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_destination" string="Destination" context="{'group_by':'destination'}"/>
+                    <filter name="group_by_prix" string="Prix" context="{'group_by':'prix'}"/>
+                </group>
+                <searchpanel>
+                    <field name="contact_id" enable_counters="1"></field>
+                </searchpanel>
             </search>
         </field>
     </record>
